@@ -107,18 +107,17 @@ let string = "4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36 8 57",
     number,
     spasePosition = true,
     startSearchposition = 0;
-while(spasePosition > -1){
+string += " ";
+while(spasePosition > -1 && startSearchposition < string.length){
     spasePosition = string.indexOf(" ", startSearchposition);
     number = Number(string.substr(startSearchposition, spasePosition - startSearchposition));
     maxNumber = maxNumber > number ? maxNumber : number;
-    minNumber = minNumber < number ? minNumber : number;
+    minNumber = (minNumber == null || minNumber > number) ? number : minNumber;
     startSearchposition = spasePosition + 1;
 }
 console.log(`Минимальное число в строке - ${minNumber}, максимальное - ${maxNumber}`);
 
 
-// 9. Дана строка с числами разделенными пробелами «4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36
-// 8 57». Найдите самое большое и самое маленькое число в строке, используя цикл.
 
 // ___ Task 10 ___
 console.log("___ Task 10 ___");
