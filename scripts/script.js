@@ -110,8 +110,8 @@ let string = "4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36 8 57",
 while(spasePosition > -1){
     spasePosition = string.indexOf(" ", startSearchposition);
     number = Number(string.substr(startSearchposition, spasePosition - startSearchposition));
-    maxNumber = Math.max(maxNumber, number);
-    minNumber = Math.min(minNumber, number);
+    maxNumber = maxNumber > number ? maxNumber : number;
+    minNumber = minNumber < number ? minNumber : number;
     startSearchposition = spasePosition + 1;
 }
 console.log(`Минимальное число в строке - ${minNumber}, максимальное - ${maxNumber}`);
