@@ -1,13 +1,13 @@
 // ___ Task 1 ___
 console.log("___ Task 1 ___");
 let i = 1;
-while (i <=50) {
+while (i <= 50) {
     console.log(i);
     i++;
 }
 i = 35;
 console.log("___ ___ ___");
-while (i >= 8){
+while (i >= 8) {
     console.log(i);
     i--;
 }
@@ -18,10 +18,10 @@ i = 89;
 let text_task2 = "",
     text_task22 = "";
 
-while (i >= 11){
+while (i >= 11) {
     text_task2 += (i + "<br/>");
     text_task22 += (i + "\n");
-    i --;
+    i--;
 }
 console.log(text_task22);
 
@@ -29,8 +29,8 @@ console.log(text_task22);
 console.log("___ Task 3 ___");
 let sum = 0;
 i = 100;
-while (i >= 0){
-    sum +=i;
+while (i >= 0) {
+    sum += i;
     i--;
 }
 console.log(sum);
@@ -40,14 +40,13 @@ console.log("___ Task 4 ___");
 i = 5;
 sum = 0;
 let j;
-while(i >= 1){
-    j = 0;
-    while(j <= i){
+while (i >= 1) {
+    sum = j = 0;
+    while (j <= i) {
         sum += j;
         j++;
     }
     console.log(`В числе ${i} сумма чисел равна ${sum}`);
-    sum = j = 0;
     i--;
 }
 
@@ -56,18 +55,14 @@ console.log("___ Task 5 (while)___");
 let a = 8;
 let b = 56;
 i = a;
-while(i <= b){
-    if(i % 2) {
-        i++;
-        continue;
-    }
-    console.log(i);
+while (i <= b) {
+    if (!(i % 2)) console.log(i);
     i++;
 }
 
 console.log("___ Task 5 (for) ___")
-for(i = a; i <= b; i++){
-    if(i % 2)continue;
+for (i = a; i <= b; i++) {
+    if (i % 2) continue;
     console.log(i);
 }
 
@@ -75,19 +70,68 @@ for(i = a; i <= b; i++){
 console.log("___ Task 6 ___");
 a = 2; //Первый множитель
 b = 1; //Второй множитель
-let d; //Счетчик второго мнодителя
 let c = 10; //Верхний предел
-let text6;
-for(; a <= c; a++){
-    for(d = b; d <= c; d++){
-    text6 = `${a}*${d} = ${a*d}`;
-    if(d === c) text6 +="\n ";
-    console.log(text6);
-    }
+for (; a <= c; a++) {
+    for (let d = b; d <= c; d++) console.log(`${a} * ${d} = ${a * d}`);
+    console.log("");
 }
 
 // ___ Task 7 ___
 console.log("___ Task 7 ___");
+let n = 1000,
+    lower_level = 50,
+    step = 2,
+    result,
+    num = 0;
+for (result = n; result >= lower_level; num++) result /= step;
+console.log(`Число ${n} станет меньше ${lower_level} после ${num} делений на ${step} и будет равно ${result}`);
+
+// ___ Task 8 ___
+console.log("___ Task 8 ___");
+let insert_value,
+    quantity = 0;
+sum = 0;
+while(true){
+    for(let flag = true; flag;) flag = isNaN(insert_value = prompt("Введите число"));
+    sum += Number(insert_value);
+    quantity++;
+    if(insert_value == 0 || insert_value == "") break;
+}
+console.log(`Сумма введенных чисел равняется ${sum}, среднее арифметическое - ${sum / (quantity - 1)}`);
+
+// ___ Task 9 ___
+console.log("___ Task 9 ___");
+let string = "4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36 8 57",
+    maxNumber = null,
+    minNumber = null,
+    number,
+    spasePosition = true,
+    startSearchposition = 0;
+while(spasePosition > -1){
+    spasePosition = string.indexOf(" ", startSearchposition);
+    number = Number(string.substr(startSearchposition, spasePosition - startSearchposition));
+    maxNumber = Math.max(maxNumber, number);
+    minNumber = Math.min(minNumber, number);
+    startSearchposition = spasePosition + 1;
+}
+console.log(`Минимальное число в строке - ${minNumber}, максимальное - ${maxNumber}`);
+
+
+// 9. Дана строка с числами разделенными пробелами «4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36
+// 8 57». Найдите самое большое и самое маленькое число в строке, используя цикл.
+
+// ___ Task 10 ___
+console.log("___ Task 10 ___");
+let $10number = 987310;
+
+// 10. Дано произвольное целое число n. Написать программу, которая:
+// a. разбивает число n на цифры и выводит их на экран;
+// b. подсчитывает сколько цифр в числе n;
+// c. находит сумму цифр числа n;
+// d. меняет порядок цифр числа n на обратный.
+//     Пример: вводится число 123: цифр в числе = 3; сумма = 6; обратный порядок 321.
+
+
 
 
 /*
