@@ -72,7 +72,8 @@ a = 2; //Первый множитель
 b = 1; //Второй множитель
 let c = 10; //Верхний предел
 for (; a <= c; a++) {
-    for (let d = b; d <= c; d++) console.log(`${a} * ${d} = ${a * d}`);
+    for (let d = b; d <= c; d++)
+        console.log(`${a} * ${d} = ${a * d}`);
     console.log("");
 }
 
@@ -92,7 +93,8 @@ let insert_value,
     quantity = 0;
 sum = 0;
 while (true) {
-    for (let flag = true; flag;) flag = isNaN(insert_value = prompt("Введите число"));
+    for (let flag = true; flag;)
+        flag = isNaN(insert_value = prompt("Введите число"));
     sum += Number(insert_value);
     quantity++;
     if (insert_value == 0 || insert_value == "") break;
