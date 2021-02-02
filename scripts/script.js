@@ -91,11 +91,11 @@ console.log("___ Task 8 ___");
 let insert_value,
     quantity = 0;
 sum = 0;
-while(true){
-    for(let flag = true; flag;) flag = isNaN(insert_value = prompt("Введите число"));
+while (true) {
+    for (let flag = true; flag;) flag = isNaN(insert_value = prompt("Введите число"));
     sum += Number(insert_value);
     quantity++;
-    if(insert_value == 0 || insert_value == "") break;
+    if (insert_value == 0 || insert_value == "") break;
 }
 console.log(`Сумма введенных чисел равняется ${sum}, среднее арифметическое - ${sum / (quantity - 1)}`);
 
@@ -108,7 +108,7 @@ let string = "4 98 4 6 1 32 4 65 4 3 5 7 89 7 10 1 36 8 57",
     spasePosition = true,
     startSearchposition = 0;
 string += " ";
-while(spasePosition > -1 && startSearchposition < string.length){
+while (spasePosition > -1 && startSearchposition < string.length) {
     spasePosition = string.indexOf(" ", startSearchposition);
     number = Number(string.substr(startSearchposition, spasePosition - startSearchposition));
     maxNumber = maxNumber > number ? maxNumber : number;
@@ -118,10 +118,22 @@ while(spasePosition > -1 && startSearchposition < string.length){
 console.log(`Минимальное число в строке - ${minNumber}, максимальное - ${maxNumber}`);
 
 
-
 // ___ Task 10 ___
 console.log("___ Task 10 ___");
-let $10number = 987310;
+let $10number = 987310,
+    $10number_,
+    $10count = 0,
+    $10sum = 0,
+    $10revers = "";
+for(; $10number > 0;){
+    $10number_ = ($10number % 10);
+    console.log($10number_);
+    $10number = parseInt($10number / 10);
+    $10count++;
+    $10sum += $10number_;
+    $10revers += $10number_;
+}
+console.log(`В числе ${$10count} цифр, сумма цифр - ${$10sum}, число в обратном порядке ${$10revers}`);
 
 // 10. Дано произвольное целое число n. Написать программу, которая:
 // a. разбивает число n на цифры и выводит их на экран;
@@ -129,8 +141,6 @@ let $10number = 987310;
 // c. находит сумму цифр числа n;
 // d. меняет порядок цифр числа n на обратный.
 //     Пример: вводится число 123: цифр в числе = 3; сумма = 6; обратный порядок 321.
-
-
 
 
 /*
